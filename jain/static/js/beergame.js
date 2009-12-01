@@ -25,6 +25,9 @@ $.ajaxSetup({
 });
 /* end configuration */
 
+/*
+ * updates the status message at top of screen
+ */
 function update_status(message) {
     $('#status-message').text(message);
 }
@@ -192,38 +195,64 @@ function set_shipment_recommendation() {
     });
 }
 
+/*
+ * logs error messages to div at bottom of game
+ */
 function log_error(msg) {
     $('#errors ul').prepend('<li>'+msg+'</li>');
 }
 
-function wait_for_teams() {
-
-    // wait for other teams to finish
-    $('#next_period_btn').val('Waiting for Other firms to Order');
-
-    $('#order_btn').everyTime(CHECK_INTERVAL, function() {
-        $.ajax({
-                data: {
-                        check: 'teams_ready',
-                        period: get_period()
-                },
-                success: function(data, textStatus) {
-                    if ('teams_ready' in data) {
-                        if (data['teams_ready']) {
-                            var per_btn = $('#next_period_btn');
-                            per_btn.attr('disabled', false);
-                            per_btn.val('Start next period');
-                            $('#order_btn').stopTime();
-                        }
-                    }
-                    else if ('error' in data) {
-                        log_error(data['error']);
+/*
+ * when getting ready to start another period
+ * check if other teams are done so we can start
+ */
+function check_if_teams_ready() {
+    $.ajax({
+            data: {
+                    check: 'teams_ready',
+                    period: get_period()
+            },
+            success: function(data, textStatus) {
+                if ('teams_ready' in data) {
+                    if (data['teams_ready']) {
+                        var per_btn = $('#next_period_btn');
+                        per_btn.attr('disabled', false);
+                        per_btn.val('Start next period');
+                        $('#order_btn').stopTime();
                     }
                 }
-        });
+                else if ('error' in data) {
+                    log_error(data['error']);
+                }
+            }
     });
 
 }
+
+/*
+ * waits for other teams to order to begin next period
+ */
+function wait_for_teams() {
+
+    // TODO make button say "Start Game"
+    // TODO short circuit if start of game
+
+    var next_per_btn = $('#next_period_btn');
+
+    if (get_period() == 0) {
+        next_per_btn.val('Start Game');
+    }
+    else {
+        // wait for other teams to finish
+        next_per_btn.val('Waiting for Other firms to Order');
+    }
+
+
+    $('#order_btn').everyTime(CHECK_INTERVAL, function() {
+    });
+
+}
+
 
 function listen_for_can_ship() {
     $('#step2_btn').everyTime(CHECK_INTERVAL, function() {
