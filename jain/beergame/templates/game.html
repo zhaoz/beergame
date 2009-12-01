@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="status-box">
+</div>
+<div id="masthead-other">
+    <div id="role-description">
+        <div id="role-label">
+            Your role:
+        </div>
+            <h2>{{ role }}</h2>
+    </div>
+
+    <div id="period-description">
+        <div id="period-label">
+            Current period:
+        </div>
+            <h2 id="period_num">
+            {% ifequal period.number 0 %}
+                Just started
+            {% endifequal %}
+            {% ifnotequal period.number 0 %}
+                {{ period.number }}
+            {% endifnotequal %}
+            </h2>
+    </div>
+</div>
+<br class="clear" />
+</div> <!-- end masthead -->
+
+
+<div id="next_period">
+    <input type="button" id="next_period_btn" value="{% ifequal period.number 0 %}Start game{% endifequal %}{% ifnotequal period.number 0 %}Start next period{% endifnotequal %}" />
+</div>
+
+<div class="step_wrapper">
+    <div id="step1" class="step">
+        <!-- <h3>Step 1</h3> -->
+        <div class="instructions">
+        Click Step 1 to advance Shipment 1 to On-hand Inventory and to advance
+        Shipment 2 to Shipment 1.
+        </div>
+        <input type="button" id="step1_btn" value="Step 1" />
+        <br />
+        <div class="lead_tile" id="inventory">
+            <h4>On-Hand Inventory</h4>
+            <p id="inv_amt">{{ period.inventory }}</p>
+        </div>
+        <div class="lead_tile" id="shipment1">
+            <h4>Shipment #1</h4>
+            <p id="ship1_amt">{{ period.shipment_1 }}</p>
+        </div>
+        <div class="lead_tile" id="shipment2">
+            <h4>Shipment #2</h4>
+            <p id="ship2_amt">{% ifequal period.shipment_2 None %}Waiting for Shipment from Supplier{% endifequal %}{% ifnotequal period.shipment_2 None %}{{ period.shipment_2 }}{% endifnotequal %}</p>
+        </div>
+        <br class="clear" />
+    </div>
+</div>
+
+<div class="step_wrapper">
+    <div id="step2" class="step">
+        <!-- <h3>Step 2</h3> -->
+        <div class="instructions">
+        Click Step 2 to advance Incoming Order 1 to Current Order and to advance
+        Incoming Order 2 to Incoming Order 1.
+        </div>
+        <input type="button" id="step2_btn" value="Step 2" />
+        <br />
+        <div class="lead_tile" id="order">
+            <h4>Current Order</h4>
+            <p id="order_amt">{% ifnotequal period.demand None %}{{ period.demand }}{% endifnotequal %}</p>
+        </div>
+        <div class="lead_tile" id="order1">
+            <h4>Incoming Order #1</h4>
+            <p id="order1_amt">
+                {% if display_orders %}
+                    {{ period.order_1 }}
+                {% endif %}
+            </p>
+        </div>
+        <div class="lead_tile" id="order2">
+            <h4>Incoming Order #2</h4>
+            <p id="order2_amt">
+                {% ifequal period.order_2 None %}
+                    Waiting for Order from Customer
+                {% endifequal %}
+                {% ifnotequal period.order_2 None %}
+                    {% if display_orders %}
+                        {{ period.order_2 }}
+                    {% endif %}
+                {% endifnotequal %}
+            </p>
+        </div>
+        <div id="shipping">
+            <label for="amt_to_ship">Enter quantity to deliver</label>
+            <input type="text" id="amt_to_ship" />
+            <input type="button" id="ship_btn" value="Ship" />
+            <div id="shipment_errors" class="error"></div>
+            <div class="instructions">
+            Recommended Shipment size is minimum of (Backlog+Current Order) and On-hand
+            Inventory. Click SHIP to send shipment to customer.
+            </div>
+        </div>
+        <br class="clear" />
+    </div>
+</div>
+
+<div class="step_wrapper">
+    <div id="step3" class="step">
+        <!-- <h3>Step 3 </h3> -->
+        <div class="instructions">
+        Click Step 3 to record end-of-period data in the table.
+        </div>
+        <input type="button" id="step3_btn" value="Step 3" />
+        <br />
+        <div id="period_table">
+            {% include "period_table.html" %}
+        </div>
+
+        <div id="ordering">
+            <label for="amt_to_order">Enter your order:</label>
+            <input type="text" id="amt_to_order" />
+            <input type="button" id="order_btn" value="Order" />
+            <div id="order_errors" class="error"></div>
+            <div class="instructions">
+            Enter an order size and click ORDER to place order on Supplier.
+            </div>
+        </div>
+        <br class="clear" />
+    </div>
+</div>
+
+
+<div id="errors">
+    <p>Errors:</p>
+    <ul>
+    </ul>
+</div>
+
+{% endblock %}

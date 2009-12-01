@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<br class="clear" />
+</div> <!-- end masthead -->
+<h2>Create a new game</h2>
+<form action="create_game" method="post">
+    {{ game_form }}
+    <input type="submit" value="Create Game" />
+</form>
+<h2>Join a game</h2>
+{% ifequal games|length 0 %}
+No recent games.
+{% endifequal %}
+
+{% ifnotequal games|length 0 %}
+<ul>
+    {% for game in games %}
+        <li>
+            <a href="join_game/{{ game.pk }}">{{ game.name }}</a>
+            - started at {{ game.date_started|date:"N d, Y h:i a" }}
+        </li>
+    {% endfor %}
+</ul>
+{% endifnotequal %}
+
+{% endblock %}

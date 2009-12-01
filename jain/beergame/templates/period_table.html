@@ -1,0 +1,37 @@
+<table>
+    <tr>
+        <th>End-of-Period</th>
+        <th>Current Order</th>
+        <th>Shipped</th>
+        <th>On-Hand<br />Inventory</th>
+        <th>Backlog</th>
+        <th>Shipment 1</th>
+        <th>Shipment 2</th>
+        <th>Period Cost</th>
+        <th>Cumulative Cost</th>
+        <th>Your Order</th>
+    </tr>
+    {% ifequal all_periods|length 0 %}
+        </table>
+        <p>No period data</p>
+    {% endifequal %}
+    {% ifnotequal all_periods|length 0 %}
+        {% for per in all_periods %}
+        <tr>
+            <td>{{ per.number }}</td>
+            <td>{{ per.demand }}</td>
+            <td>{{ per.shipped }}</td>
+            <td>{{ per.inventory }}</td>
+            <td>{{ per.backlog }}</td>
+            <td>{{ per.shipment_1 }}</td>
+            <td>{{ per.shipment_2 }}</td>
+            <td>{{ per.cost }}</td>
+            <td>{{ per.cumulative_cost }}</td>
+            <td>{{ per.order }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    {% endifnotequal %}
+
+
+

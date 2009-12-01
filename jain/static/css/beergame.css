@@ -1,0 +1,160 @@
+div#qunit-wrapper {
+    clear: both;
+}
+
+body {
+    font-family: arial, verdana, helvetica, sans-serif;
+    margin: 0;
+}
+
+div#masthead-logo {
+    float: left;
+    width: 340px;
+}
+
+div#masthead-other {
+    float: left;
+    padding: 40px 10px 10px 10px;
+}
+
+div#role-description h2, div#period-description h2 {
+    margin-top: 0;
+}
+
+div#role-label, div#period-label {
+    font-size: 0.7em;
+}
+
+h1#beergame-header {
+    background: url('/static/img/beergame-logo.gif');
+    height: 143px;
+    width: 231px;
+}
+
+div#status-message {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px;
+    position: fixed;
+    top: 2px;
+    width: 700px;
+    z-index: 2;
+}
+
+input[type="button"], input[type="submit"] {
+    font-weight: bold;
+    padding: 4px 8px 4px 8px;
+}
+
+div.instructions {
+    background: #dedede;
+    font-size: 0.75em;
+    margin-bottom: 4px;
+    padding: 8px;
+}
+
+div.lead_tile h4 {
+    text-align: center;
+}
+
+div.lead_tile p {
+    text-align: center;
+}
+
+br.clear {
+    clear: both;
+}
+
+div#container {
+    left: 50%;
+    margin-left: -350px;
+    position: relative;
+    width: 700px;
+}
+
+div#errors {
+    border: 1px solid #000000;
+}
+
+div.step_wrapper {
+    background: #999999;
+    margin: 10px;
+    padding: 8px;
+}
+
+div.step {
+    background: #efefef;
+    border: 1px solid #000000; 
+    padding: 10px;
+}
+
+div.lead_tile {
+    background: #FCB528;
+    margin: 4px;
+    padding: 20px;  
+    width: 130px;
+    height: 100px;
+}
+
+#step1 .lead_tile {
+    float: left;
+}
+
+#step2 .lead_tile {
+    float: right; 
+}
+
+div#step1 {
+    clear: both;
+}
+
+div#step2 {
+    clear: both;
+}
+
+div#shipping, div#ordering {
+    clear: both;
+    padding: 30px 5px 4px 5px;
+    text-align: right;
+}
+
+div#step3 {
+    clear: both;
+}
+
+div#period_table {
+    margin-top: 10px;
+}
+
+div#period_table table {
+    border: 4px solid #999999; 
+    border-collapse: collapse;
+}
+
+div#period_table table th {
+    border-bottom: 4px solid #999999;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+    font-size: 0.8em;
+    padding: 4px;
+}
+
+div#period_table table td {
+    text-align: center;
+}
+
+div.error {
+    color: #ff0000;
+}
+
+/* control panel */
+div#chart-games {
+    float: left;
+    padding: 15px;
+    width: 300px;
+}
+div#chart-output {
+    float: left;
+    padding: 15px;
+}
+/* end control panel */

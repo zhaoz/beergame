@@ -1,0 +1,548 @@
+[
+    {
+        "pk": 22, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_logentry", 
+            "name": "Can add log entry", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_logentry", 
+            "name": "Can change log entry", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_logentry", 
+            "name": "Can delete log entry", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_group", 
+            "name": "Can add group", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_message", 
+            "name": "Can add message", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_permission", 
+            "name": "Can add permission", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_user", 
+            "name": "Can add user", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_group", 
+            "name": "Can change group", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_message", 
+            "name": "Can change message", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_permission", 
+            "name": "Can change permission", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_user", 
+            "name": "Can change user", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_group", 
+            "name": "Can delete group", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_message", 
+            "name": "Can delete message", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_permission", 
+            "name": "Can delete permission", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_user", 
+            "name": "Can delete user", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_game", 
+            "name": "Can add game", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_period", 
+            "name": "Can add period", 
+            "content_type": 11
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_team", 
+            "name": "Can add team", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_game", 
+            "name": "Can change game", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_period", 
+            "name": "Can change period", 
+            "content_type": 11
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_team", 
+            "name": "Can change team", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_game", 
+            "name": "Can delete game", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_period", 
+            "name": "Can delete period", 
+            "content_type": 11
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_team", 
+            "name": "Can delete team", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_contenttype", 
+            "name": "Can add content type", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_contenttype", 
+            "name": "Can change content type", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_contenttype", 
+            "name": "Can delete content type", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_session", 
+            "name": "Can add session", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_session", 
+            "name": "Can change session", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_session", 
+            "name": "Can delete session", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_site", 
+            "name": "Can add site", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_site", 
+            "name": "Can change site", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_site", 
+            "name": "Can delete site", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "taylor", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": 1, 
+            "is_superuser": 1, 
+            "is_staff": 1, 
+            "last_login": "2009-10-15 23:22:29", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$663dd$ca8b0bf48dd0795a333824b0847a7e47051be4c9", 
+            "email": "taylormckay@gmail.com", 
+            "date_joined": "2009-10-15 23:22:29"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "contenttype", 
+            "name": "content type", 
+            "app_label": "contenttypes"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "game", 
+            "name": "game", 
+            "app_label": "beergame"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "group", 
+            "name": "group", 
+            "app_label": "auth"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "logentry", 
+            "name": "log entry", 
+            "app_label": "admin"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "message", 
+            "name": "message", 
+            "app_label": "auth"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "period", 
+            "name": "period", 
+            "app_label": "beergame"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "permission", 
+            "name": "permission", 
+            "app_label": "auth"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "session", 
+            "name": "session", 
+            "app_label": "sessions"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "site", 
+            "name": "site", 
+            "app_label": "sites"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "team", 
+            "name": "team", 
+            "app_label": "beergame"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "contenttypes.contenttype", 
+        "fields": {
+            "model": "user", 
+            "name": "user", 
+            "app_label": "auth"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "example.com", 
+            "name": "example.com"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "beergame.game", 
+        "fields": {
+            "date_started": "2009-10-15 23:24:29", 
+            "name": "test"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "beergame.team", 
+        "fields": {
+            "game": 1, 
+            "role": "Factory", 
+            "last_clicked_button": "none", 
+            "last_completed_period": 0
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "beergame.team", 
+        "fields": {
+            "game": 1, 
+            "role": "Distributor", 
+            "last_clicked_button": "none", 
+            "last_completed_period": 0
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "beergame.team", 
+        "fields": {
+            "game": 1, 
+            "role": "Wholesaler", 
+            "last_clicked_button": "none", 
+            "last_completed_period": 0
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "beergame.team", 
+        "fields": {
+            "game": 1, 
+            "role": "Retailer", 
+            "last_clicked_button": "none", 
+            "last_completed_period": 0
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "beergame.period", 
+        "fields": {
+            "cost": "0.00", 
+            "team": 1, 
+            "number": 0, 
+            "shipment_2": 4, 
+            "order_2": 4, 
+            "shipped": null, 
+            "order_1": 4, 
+            "shipment_1": 4, 
+            "inventory": 12, 
+            "demand": null, 
+            "cumulative_cost": "0.00", 
+            "order": 0, 
+            "backlog": 0
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "beergame.period", 
+        "fields": {
+            "cost": "0.00", 
+            "team": 2, 
+            "number": 0, 
+            "shipment_2": 4, 
+            "order_2": 4, 
+            "shipped": null, 
+            "order_1": 4, 
+            "shipment_1": 4, 
+            "inventory": 12, 
+            "demand": null, 
+            "cumulative_cost": "0.00", 
+            "order": 0, 
+            "backlog": 0
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "beergame.period", 
+        "fields": {
+            "cost": "0.00", 
+            "team": 3, 
+            "number": 0, 
+            "shipment_2": 4, 
+            "order_2": 4, 
+            "shipped": null, 
+            "order_1": 4, 
+            "shipment_1": 4, 
+            "inventory": 12, 
+            "demand": null, 
+            "cumulative_cost": "0.00", 
+            "order": 0, 
+            "backlog": 0
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "beergame.period", 
+        "fields": {
+            "cost": "0.00", 
+            "team": 4, 
+            "number": 0, 
+            "shipment_2": 4, 
+            "order_2": 4, 
+            "shipped": null, 
+            "order_1": 4, 
+            "shipment_1": 4, 
+            "inventory": 12, 
+            "demand": null, 
+            "cumulative_cost": "0.00", 
+            "order": 0, 
+            "backlog": 0
+        }
+    }
+]

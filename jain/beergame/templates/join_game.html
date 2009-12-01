@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+<br class="clear" />
+</div> <!-- end masthead -->
+<h2>Join {{ game.name }}</h2>
+<p>Select role:</p>
+<ul>
+    {% for role in roles %}
+        <li><a href="/game/{{ game.pk }}/{{ role.0 }}/">{{ role.0 }}</a></li>    
+    {% endfor %}
+</ul>
+{% endblock %}
+

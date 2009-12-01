@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div id="masthead-other">
+        <h2>Control Panel</h2>
+    </div>
+    <br class="clear" />
+</div> <!-- end masthead -->
+
+<div id="get-spreadsheet">
+<fieldset>
+<legend>Download Data as Spreadsheet</legend>
+    <form method="get" action="spreadsheet">
+        <div>
+            <div class="instructions">
+                Enter a starting date and time.  Data will start at the date and time <strong>you</strong> enter and go to the <strong>current</strong> date and time.
+            </div>
+            Start Date and Time:<br />
+                Month:  <select name="month">
+                            {% for month in months %}
+                                <option value="{{ month }}" 
+                                    {% ifequal month now.month %} 
+                                    selected="selected" 
+                                    {% endifequal %}
+                                    >{{ month }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                <br />
+                Day:    <select name="day">
+                            {% for day in days %}
+                                <option value="{{ day }}"
+                                    {% ifequal day now.day %} 
+                                    selected="selected" 
+                                    {% endifequal %}
+                                >{{ day }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                <br />
+                Year:
+                        <select name="year">
+                            {% for year in years %}
+                                <option value="{{ year }}"
+                                    {% ifequal year now.year %} 
+                                    selected="selected" 
+                                    {% endifequal %}
+                                >{{ year }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                <br />
+                Time:
+                        <select name="hour">
+                            {% for hour in hours %}
+                                <option value="{{ hour }}">{{ hour }}</option>
+                            {% endfor %}
+                        </select>
+                        :
+                        <select name="minute">
+                            {% for minute in minutes %}
+                                <option value="{{ minute }}">{{ minute }}</option>
+                            {% endfor %}
+                        </select>
+                        <select name="ampm">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                <br />
+                <input type="submit" value="Download" />
+        </div>
+    </form>
+</fieldset>
+</div>
+
+<fieldset>
+    <legend>Get Charts</legend>
+    <div class="instructions">
+        Select supply chain name to generate chart link.
+    </div>
+    <div id="chart-games">
+        <select id="chart-select">
+            <option value="none">Select supply chain...</option>
+        {% for game in games %}
+            <option value="{{ game.pk }}">{{ game.name }}</option>
+        {% endfor %}
+        </select>
+    </div>
+    <div id="chart-output">
+    </div>
+</fieldset>
+
+{% endblock %}
