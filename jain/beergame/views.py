@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import json
 
 from django.shortcuts import render_to_response, get_object_or_404
+from django.template import RequestContext
 from django.http import HttpResponse
 from django.db.models import F
 
@@ -20,9 +21,9 @@ def start(request):
 
     return render_to_response('start.html', 
                                 {
-                                    'game_form': GameForm(),
                                     'games': games,
-                                })
+                                },
+                                context_instance=RequestContext(request))
 
 def create_game(request):
     req = request.POST.copy()
@@ -380,6 +381,7 @@ def cp(request):
                                                 'minutes': ['00','15','30','45'],
                                                 'now': datetime.now(),
                                                 'games': games,
+                                                'game_form': GameForm(),
                                             })
 
 def get_chart(request):
@@ -449,21 +451,26 @@ def output_csv(request):
 
     for game in games:
         teams = Team.objects.filter(game=game)
-        periods = Period.objects.filter(team__in=teams).order_by('team__role','number')
         
-        idx = 0
-        for period in periods:
-            idx += 1
-            vals = [period.pk, period.team.game, period.team.role, period.number, 
-            period.inventory, period.backlog,period.demand,period.order_1, 
-            period.order_2, period.shipment_1, period.shipment_2, period.shipped, 
-            period.cost, period.cumulative_cost, period.order]
+        for team in teams:
+            periods = Period.objects.filter(team=team).order_by('number')
+            
+            idx = 0
+            for period in periods:
+                idx += 1
+                vals = [period.pk, period.team.game, period.team.role, period.number, 
+                period.inventory, period.backlog,period.demand,period.order_1, 
+                period.order_2, period.shipment_1, period.shipment_2, period.shipped, 
+                period.cost, period.cumulative_cost, period.order]
 
-            writer.writerow(vals)
-        
-        while idx < 200:
-            idx += 1
-            writer.writerow([])
+                writer.writerow(vals)
+
+                if idx == 40:
+                    break
+            
+            while idx < 40:
+                idx += 1
+                writer.writerow([])
     
     return response
 
