@@ -84,4 +84,5 @@ INSTALLED_APPS = (
     'jain.beergame',
 )
 
+# XXX explain what this is
 DISPLAY_ORDERS = False
