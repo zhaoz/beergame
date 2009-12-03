@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     url(r'^cp/$','beergame.views.cp'),
     url(r'^cp/spreadsheet/$','beergame.views.output_csv'),
     url(r'^cp/chart/$','beergame.views.get_chart'),
-    url(r'^cp/chart/$','beergame.views.get_chart'),
 
     url(r'^jstest/$','beergame.views.js_test'),
 )
