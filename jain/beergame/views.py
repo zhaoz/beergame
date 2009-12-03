@@ -33,15 +33,7 @@ def create_game(request):
 
     # create teams
     for role in Team.ROLE_CHOICES:
-        team = Team(game=game, role=role[0], last_clicked_button='none')
-        team.save()
-
-        # a 0 period to get default values
-        period = Period(team=team, number=0, inventory=12, backlog=0, 
-                            order_1=4, order_2=4, shipment_1=4, 
-                            shipment_2=4, order=0)
-
-        period.save()
+        Team(game=game, role=role[0], last_clicked_button='none').save()
     
     return render_to_response('create_game.html', {'game': game})
 

@@ -30,23 +30,29 @@ class Team(models.Model):
     last_completed_period = models.IntegerField(default=0)
     last_clicked_button = models.CharField(max_length=12, choices=BUTTONS) 
 
+    def save(self, *args, **kwargs):
+        ret = super(self.__class__, self).save(*args, **kwargs)
+        Period(team=self).save()
+
+        return ret
+
     def __unicode__(self):
         return "%s playing in %s" % (self.role, self.game.name)
 
 class Period(models.Model):
     team = models.ForeignKey(Team)
-    number = models.IntegerField()
-    inventory = models.IntegerField(default=0)
+    number = models.IntegerField(default=0)
+    inventory = models.IntegerField(default=12)
     backlog = models.IntegerField(default=0)
     demand = models.IntegerField(blank=True, null=True)
-    order_1 = models.IntegerField(blank=True, null=True)
-    order_2 = models.IntegerField(blank=True, null=True)
-    shipment_1 = models.IntegerField(blank=True, null=True)
-    shipment_2 = models.IntegerField(blank=True, null=True)
+    order_1 = models.IntegerField(blank=True, null=True, default=4)
+    order_2 = models.IntegerField(blank=True, null=True, default=4)
+    shipment_1 = models.IntegerField(blank=True, null=True, default=4)
+    shipment_2 = models.IntegerField(blank=True, null=True, default=4)
     shipped = models.IntegerField(blank=True, null=True)
     cost = models.DecimalField(max_digits=8, decimal_places=2, default='0.00')
     cumulative_cost = models.DecimalField(max_digits=8, decimal_places=2, default='0.00')
-    order = models.IntegerField(blank=True, null=True)
+    order = models.IntegerField(blank=True, null=True, default=0)
 
     def __unicode__(self):
         return "%d / %s / %s" % (self.number, self.team.role, self.team.game.name)
